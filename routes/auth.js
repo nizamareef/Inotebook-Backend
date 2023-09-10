@@ -9,7 +9,7 @@ const dotenv=require('dotenv').config()
 
 const jwt_secret = process.env.JWTSECRET;
 //Router-1 TO CREATE THE USER DETAILS
-router.post('/create',
+router.post('/create',  
     [body("name").isLength({ min: 3 }),
     body("email", 'enter a valid mail').isEmail(),
     body("password").isLength({ min: 5 })
@@ -29,6 +29,7 @@ router.post('/create',
         }
         success=true
         user = await User.create({
+            
             name: req.body.name,
             email: req.body.email,
             password: hash
