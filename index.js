@@ -7,7 +7,7 @@ const port = 5000
 connectDB()
     
     app.use(express.json())
-    app.use(cors())
+    app.use(cors({origin:"*"}))
     
     app.use('/api/note', require("./routes/note"))
     app.use('/api/auth', require("./routes/auth"))

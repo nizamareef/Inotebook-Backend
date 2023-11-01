@@ -11,7 +11,6 @@ const fetchdata = (req, res, next) => {
     const data = jwt.verify(token, jwt_secret)
     console.log(data)
     req.userid = data.userId
-    // console.log(req.userid)
     next()
 }
 
